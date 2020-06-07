@@ -33,7 +33,7 @@ COPY ./s2i/ $STI_SCRIPTS_PATH
 
 RUN apk add --no-cache bash git npm && \
     mkdir -p ${HOME} && \
-#    adduser -S -u 1001 -G root -h ${HOME} -s /sbin/nologin -g "Default Application User" default && \
+    adduser -S -u 1001 -G root -h ${HOME} -s /sbin/nologin -g "Default Application User" default && \
     chgrp -R 0 ${APP_ROOT} && \
     chmod -R g=u ${APP_ROOT}
 

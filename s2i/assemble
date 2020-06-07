@@ -63,4 +63,4 @@ if [ -f "nginx.conf" ]; then
 fi
 
 echo "---> Fix permissions on app-root"
-chown -R 0 $APP_ROOT
+chmod -R 777 $APP_ROOT
