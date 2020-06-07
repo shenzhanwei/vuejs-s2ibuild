@@ -6,7 +6,8 @@ A docker image for building chained source-to-image VueJS web applications.
 ```shell
 docker build -t vuejs-s2i-builder:latest .
 ```
-
+openshift
+oc new-build --strategy=docker --name=vuejs-s2ibuild https://github.com/shenzhanwei/vuejs-s2ibuild.git
 ## Using this image in a development build
 
 If you want to test building and deploying your application with this image only you can use the following:
