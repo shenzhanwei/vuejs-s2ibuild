@@ -29,13 +29,13 @@ ENV STI_SCRIPTS_PATH=/usr/libexec/s2i \
 
 ENV PATH=$HOME/node_modules/.bin:$HOME/bin:$APP_ROOT/bin:$PATH
 
-COPY ./s2i/ $STI_SCRIPTS_PATH
-
+COPY ./s2i/bin/ $STI_SCRIPTS_PATH
+RUN chmod -R 777 /usr/libexec/s2i
 RUN apk add --no-cache bash git npm && \
     mkdir -p ${HOME} && \
     adduser -S -u 1001 -G root -h ${HOME} -s /sbin/nologin -g "Default Application User" default && \
-    chgrp -R 0 ${APP_ROOT} && \
-    chmod -R g=u ${APP_ROOT}
+    chgrp -R 0 ${APP_ROOT}  ${HOME} && \
+    chmod -R g=u ${APP_ROOT} ${HOME}
 
 USER 1001
 

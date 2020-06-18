@@ -14,7 +14,7 @@
     {
       "name": "GIT_URI",
       "displayName": "Git Repository containing application source code",
-      "description": "GIT URL pointing to the repository containing application source code for Java Spring Boot Application",
+      "description": "GIT URL pointing to the repository containing application source code for VUEJS Application",
       "value": "https://github.com/ganrad/YourProject.git"
     },
     {
